@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
+import './styles/main.css';
+import './styles/reset.min.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { ListProvider } from './strore';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ListProvider>
+      <App />
+    </ListProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

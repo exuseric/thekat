@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import DefaultLayout from '../layouts/DefaultLayout';
-import { ListContext } from '../strore';
+import { ListContext } from '../store';
 
 import homeStyles from '../styles/home.module.css';
 

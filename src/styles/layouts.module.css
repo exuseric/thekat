@@ -14,3 +14,19 @@
 }
 
 /* Task layout styles */
+.task_layout__container {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-auto-rows: auto;
+  gap: 20px;
+}
+
+.task_layout__navigation {
+  grid-column: 1 / 2;
+
+  width: 100%;
+}
+
+.task_layout__child {
+  grid-column: 2 / -1;
+}

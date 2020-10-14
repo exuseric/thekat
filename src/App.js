@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import { HOME_PAGE } from './pages';
+import { HOME_PAGE, LIST_PAGE } from './pages';
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={HOME_PAGE} />
+          <Route exact path='/list/:list' component={LIST_PAGE} />
         </Switch>
       </Router>
     </main>

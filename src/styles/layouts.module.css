@@ -1,0 +1,16 @@
+/* Default layout styles */
+.default_layout__container {
+  width: 100%;
+  height: 100%;
+
+  max-width: 1300px;
+  min-height: 100vh;
+
+  margin: 0 auto;
+}
+
+.default_layout__child {
+  width: 100%;
+}
+
+/* Task layout styles */

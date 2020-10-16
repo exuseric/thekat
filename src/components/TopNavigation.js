@@ -4,7 +4,7 @@ import { FiGithub, FiMenu, FiX } from 'react-icons/fi';
 
 import { Logo } from '.';
 
-import navStyles from '../styles/navigation.module.css';
+import styles from '../styles/navigation.module.css';
 
 const TopNavigation = () => {
   const [menu, setMenu] = useState(false);
@@ -12,17 +12,17 @@ const TopNavigation = () => {
   const handleMenu = () => setMenu(!menu);
 
   return (
-    <nav className={navStyles.default_nav}>
-      <Link to='/' className={navStyles.default_nav__logo}>
+    <nav className={styles.top_nav}>
+      <Link to='/' className={styles.top_nav__logo}>
         <Logo size='medium' />
       </Link>
       <ul
-        className={`${navStyles.default_nav__links} ${
-          menu ? navStyles.show_menu : navStyles.hide_menu
+        className={`${styles.top_nav__links} ${
+          menu ? styles.show_menu : styles.hide_menu
         }`}
       >
         <button
-          className={`${navStyles.menu_btn} ${navStyles.menu_btn__close}`}
+          className={`${styles.menu_btn} ${styles.menu_btn__close}`}
           aria-hidden='true'
           onClick={handleMenu}
         >
@@ -31,12 +31,12 @@ const TopNavigation = () => {
           </span>
         </button>
         <li>
-          <Link to='/' className={navStyles.default_nav__link}>
+          <Link to='/' className={styles.nav_link}>
             Home
           </Link>
         </li>
         <li>
-          <Link to='/about' className={navStyles.default_nav__link}>
+          <Link to='/about' className={styles.nav_link}>
             about us
           </Link>
         </li>
@@ -45,7 +45,7 @@ const TopNavigation = () => {
             href='https://thisiseric.netlify.app'
             target='_blank'
             rel='noopener noreferrer'
-            className={navStyles.default_nav__link}
+            className={styles.nav_link}
           >
             portfolio
           </a>
@@ -55,7 +55,7 @@ const TopNavigation = () => {
             href='https://github.com/erimaga/thekat-version-2'
             target='_blank'
             rel='noopener noreferrer'
-            className={navStyles.default_nav__link}
+            className={styles.nav_link}
           >
             <span className='icon'>
               <FiGithub />
@@ -65,7 +65,7 @@ const TopNavigation = () => {
       </ul>
 
       <button
-        className={navStyles.menu_btn}
+        className={styles.menu_btn}
         aria-hidden='true'
         onClick={handleMenu}
       >

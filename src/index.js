@@ -7,7 +7,7 @@ import './styles/reset.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import { ListProvider } from './strore';
+import { ListProvider } from './store';
 
 ReactDOM.render(
   <React.StrictMode>

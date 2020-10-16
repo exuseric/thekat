@@ -9,7 +9,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={HOME_PAGE} />
-          <Route exact path='/list/:list' component={LIST_PAGE} />
+          <Route exact path='/list/' component={LIST_PAGE} />
         </Switch>
       </Router>
     </main>

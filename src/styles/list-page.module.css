@@ -1,0 +1,22 @@
+.header {
+  text-align: right;
+}
+
+.task_wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: auto;
+  gap: 1rem;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .header {
+    text-align: center;
+  }
+}

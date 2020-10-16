@@ -16,7 +16,7 @@
 /* Task layout styles */
 .task_layout__container {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: var(--nav-width) 1fr;
   grid-auto-rows: auto;
   gap: 20px;
 }
@@ -29,4 +29,27 @@
 
 .task_layout__child {
   grid-column: 2 / -1;
+}
+
+@media screen and (max-width: 500px) {
+  .task_layout__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr var(--nav-height);
+  }
+
+  .task_layout__navigation,
+  .task_layout__child {
+    grid-column: 1 / -1;
+  }
+
+  .task_layout__navigation {
+    grid-row: 2 / -1;
+  }
+
+  .task_layout__child {
+    grid-row: 1 / 2;
+
+    min-height: calc(100vh - var(--nav-height));
+  }
 }

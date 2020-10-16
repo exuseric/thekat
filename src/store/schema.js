@@ -1,15 +1,15 @@
 const list = (title, id) => ({ id, title });
 
-const task = (title, id, list_id) => ({
+const task = (title, id, ref_id) => ({
   id,
-  list_id,
+  ref_id,
   title,
   completed: false,
 });
 
-const subtask = (title, id, task_id) => ({
+const subtask = (title, id, ref_id) => ({
   id,
-  task_id,
+  ref_id,
   title,
   completed: false,
 });

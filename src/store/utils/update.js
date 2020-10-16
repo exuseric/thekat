@@ -37,4 +37,8 @@ const removeItem = (arr, id) => {
   return updated;
 };
 
-export { createItem, renameItem, completeItem, removeItem };
+const removeItemByRef = (arr, id) => {
+  return [...arr].filter((item) => item.ref_id === parseInt(id));
+};
+
+export { createItem, renameItem, completeItem, removeItem, removeItemByRef };

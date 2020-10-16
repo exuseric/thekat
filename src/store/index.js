@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import * as storage from './utils/storage';
 import * as update from './utils/update';
+import * as search from './utils/search';
 
 const ListContext = React.createContext();
 
@@ -14,12 +15,25 @@ class ListProvider extends Component {
       subtask: [],
       activeList: null,
       activeTask: null,
+      form: {
+        type: null,
+        visible: false,
+      },
     };
   }
 
   componentDidMount() {
     if (localStorage.length !== 0) {
-      this.setState({ ...storage.GET_ITEMS({ ...this.state }) });
+      const defaults = {
+        form: {
+          type: null,
+          visible: false,
+        },
+      };
+      this.setState({
+        ...storage.GET_ITEMS({ ...this.state }),
+        ...defaults,
+      });
     } else {
       storage.ADD_ITEMS({ ...this.state });
     }
@@ -46,6 +60,8 @@ class ListProvider extends Component {
     }
   };
 
+  SHOW_FORM = (type, visible) => this.setState({ form: { type, visible } });
+
   // Add a list, task or subtask.
   ADD_ITEM = (type, title) => {
     let parent_id;
@@ -66,19 +82,62 @@ class ListProvider extends Component {
           parent_id,
         }),
       ],
-      activeList: this.state.list.length,
-      activeTask: this.state.subtask.length,
     });
   };
 
-  GET_ITEM = (type) => {};
+  GET_ITEM = (type, id) => search.bySelfId([...this.state[type]], id);
+
+  RENAME_ITEM = (data) => {
+    const { type, id: passedId, title } = data;
+    let id;
+    if (type === 'list') id = this.state.activeList;
+    if (type === 'task') id = this.state.activeTask;
+    if (type === 'subtask') id = passedId;
+
+    return this.setState({
+      [type]: [...update.renameItem([...this.state[type]], id, title)],
+    });
+  };
+  DELETE_ITEM = (type, id) => {
+    if (type === 'list') {
+      return this.setState({
+        [type]: update.removeItem([...this.state[type]], id),
+        task: update.removeItemByRef(
+          [...this.state.task],
+          this.state.activeList
+        ),
+      });
+    } else {
+      return this.setState({
+        [type]: update.removeItem([...this.state[type]], id),
+      });
+    }
+  };
+
+  GET_TASKS = (type) => {
+    if (type === 'task') {
+      return search.byRefId([...this.state[type]], this.state.activeList);
+    }
+    if (type === 'subtask') {
+      return search.byRefId([...this.state[type]], this.state.activeTask);
+    }
+  };
+
+  GET_LISTS = () => [...this.state.list].reverse();
 
   render() {
     return (
       <ListContext.Provider
         value={{
           ...this.state,
+          CURRENTLY_ACTIVE: this.CURRENTLY_ACTIVE,
+          SHOW_FORM: this.SHOW_FORM,
           ADD_ITEM: this.ADD_ITEM,
+          GET_ITEM: this.GET_ITEM,
+          RENAME_ITEM: this.RENAME_ITEM,
+          DELETE_ITEM: this.DELETE_ITEM,
+          GET_LISTS: this.GET_LISTS,
+          GET_TASKS: this.GET_TASKS,
         }}
       >
         {this.props.children}

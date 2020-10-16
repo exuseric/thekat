@@ -1,0 +1,55 @@
+/* Add new form styles */
+.add_form__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: grid;
+  place-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+}
+
+.add_form {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  align-items: center;
+  gap: 1rem;
+
+  width: 500px;
+  height: max-content;
+
+  padding: 2rem 4rem 4rem;
+
+  background-color: var(--primary-bg);
+
+  border-radius: 30px;
+}
+
+.form_cancel {
+  background-color: var(--primary-accent-text-color);
+  color: var(--primary-text-color);
+}
+
+@media screen and (max-width: 500px) {
+  .add_form {
+    width: 80%;
+    height: max-content;
+
+    row-gap: 2rem;
+
+    padding: 2rem 2rem 4rem;
+
+    border-radius: 15px;
+  }
+
+  .form_cancel {
+    margin: 1rem 0;
+  }
+}

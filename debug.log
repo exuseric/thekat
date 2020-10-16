@@ -179,3 +179,7 @@
 [1014/160654.187:ERROR:process_memory_win.cc(73)] ReadMemory at 0x7ffcc011a168 of 8 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
 [1014/160654.187:ERROR:process_snapshot_win.cc(333)] failed to read target address
 [1014/172219.544:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1015/155848.911:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1016/100706.400:ERROR:process_reader_win.cc(127)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[1016/100707.134:ERROR:exception_snapshot_win.cc(100)] thread ID 7176 not found in process
+[1016/100709.775:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\erimaga\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\2f43e094-c01d-4697-b047-a8ed024cba44: The system cannot find the path specified. (0x3)

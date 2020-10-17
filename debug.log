@@ -184,3 +184,5 @@
 [1016/100707.134:ERROR:exception_snapshot_win.cc(100)] thread ID 7176 not found in process
 [1016/100709.775:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\erimaga\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\2f43e094-c01d-4697-b047-a8ed024cba44: The system cannot find the path specified. (0x3)
 [1017/123126.876:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1017/162548.204:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1017/165940.128:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

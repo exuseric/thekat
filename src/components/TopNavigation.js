@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiGithub, FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX } from 'react-icons/fi';
 
 import { Logo } from '.';
 
+import links from '../data/routes';
 import styles from '../styles/navigation.module.css';
 
 const TopNavigation = () => {
@@ -30,38 +31,29 @@ const TopNavigation = () => {
             <FiX />
           </span>
         </button>
-        <li>
-          <Link to='/' className={styles.nav_link}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to='/about' className={styles.nav_link}>
-            about us
-          </Link>
-        </li>
-        <li>
-          <a
-            href='https://thisiseric.netlify.app'
-            target='_blank'
-            rel='noopener noreferrer'
-            className={styles.nav_link}
-          >
-            portfolio
-          </a>
-        </li>
-        <li>
-          <a
-            href='https://github.com/erimaga/thekat-version-2'
-            target='_blank'
-            rel='noopener noreferrer'
-            className={styles.nav_link}
-          >
-            <span className='icon'>
-              <FiGithub />
-            </span>
-          </a>
-        </li>
+        {links
+          .filter((l) => !l.external)
+          .map((link) => (
+            <li key={link.path}>
+              <Link to={link.path} className={styles.nav_link}>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        {links
+          .filter((l) => l.external)
+          .map((link) => (
+            <li key={link.path}>
+              <a
+                className={styles.nav_link}
+                href={link.path}
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                {link.name !== 'react' ? link.name : null}
+              </a>
+            </li>
+          ))}
       </ul>
 
       <button

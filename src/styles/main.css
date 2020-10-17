@@ -179,6 +179,10 @@ a {
   border-bottom-color: var(--secondary-accent-bg);
 }
 
+a:hover {
+  color: var(--secondary-accent-text-color);
+}
+
 @media screen and (max-width: 500px) {
   .form_submit {
     grid-column: 1 / -1;

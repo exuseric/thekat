@@ -6,3 +6,4 @@ export { default as ListActions } from './ListActions';
 export { default as AddNewForm } from './AddNewForm';
 export { default as Task } from './Task';
 export { default as Subtask } from './Subtask';
+export { default as Footer } from './Footer';

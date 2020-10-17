@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TopNavigation } from '../components';
+import { TopNavigation, Footer } from '../components';
 
 import layoutStyles from '../styles/layouts.module.css';
 
@@ -9,6 +9,7 @@ const DefaultLayout = ({ children }) => {
     <div className={layoutStyles.default_layout__container}>
       <TopNavigation />
       <div className={layoutStyles.default_layout__child}>{children}</div>
+      <Footer />
     </div>
   );
 };

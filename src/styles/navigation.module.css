@@ -36,10 +36,6 @@
   transition: var(--ease-transition);
 }
 
-.nav_link:hover {
-  color: var(--secondary-accent-text-color);
-}
-
 /* End of global values */
 
 /* top navigation styles */

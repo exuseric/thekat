@@ -1,0 +1,46 @@
+.footer {
+  width: inherit;
+  height: max-content;
+}
+
+.top,
+.bottom {
+  width: 100%;
+}
+.bottom {
+  padding: 2rem 1rem;
+}
+
+.top {
+  width: 100%;
+}
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-rows: 100px;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 0;
+  margin: 0;
+
+  text-transform: capitalize;
+}
+
+.links_title,
+.link {
+  padding: 0.5rem 1rem;
+}
+
+.link {
+  display: block;
+
+  text-decoration: none;
+  text-align: center;
+
+  width: 100%;
+  height: max-content;
+
+  color: var(--secondary-text-color);
+}

@@ -39,10 +39,8 @@ const AddForm = () => {
       title.length !== 0 &&
       (form.type === 'rename list' || form.type === 'rename task')
     ) {
-      if (form.type === 'rename list') {
-        RENAME_ITEM({ type: 'list', title });
-        handleClose();
-      }
+      RENAME_ITEM({ type: form.type.replace('rename', '').trim(), title });
+      handleClose();
     }
   };
 
@@ -63,8 +61,8 @@ const AddForm = () => {
             onChange={handleTitle}
           />
         </div>
-        <div className='form_group'>
-          <button className='form_submit'>Save</button>
+        <div className={`form_group ${styles.form_group__actions}`}>
+          <button className={`form_submit ${styles.form_submit}`}>Save</button>
           <button
             type='button'
             className={styles.form_cancel}

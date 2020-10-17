@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 
 import TaskLayout from '../layouts/TaskLayout';
-import styles from '../styles/list-page.module.css';
+import styles from '../styles/taskpages.module.css';
 import { ListContext } from '../store';
 import { Task } from '../components';
 

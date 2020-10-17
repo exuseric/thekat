@@ -87,6 +87,10 @@
   color: var(--primary-text-color);
 }
 
+.form_submit {
+  grid-column: -5 /-1;
+}
+
 .home_lists__link:hover {
   color: var(--primary-text-color);
   background-color: var(--secondary-accent-bg);

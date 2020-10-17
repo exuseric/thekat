@@ -116,10 +116,14 @@ class ListProvider extends Component {
 
   GET_TASKS = (type) => {
     if (type === 'task') {
-      return search.byRefId([...this.state[type]], this.state.activeList);
+      return search
+        .byRefId([...this.state[type]], this.state.activeList)
+        .reverse();
     }
     if (type === 'subtask') {
-      return search.byRefId([...this.state[type]], this.state.activeTask);
+      return search
+        .byRefId([...this.state[type]], this.state.activeTask)
+        .reverse();
     }
   };
 

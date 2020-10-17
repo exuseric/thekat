@@ -126,9 +126,9 @@ const ListActions = () => {
         >
           {lists.map((list) => (
             <button
-              className={`${styles.list_links__link} ${
+              className={`${styles.dropdown_links__link} ${
                 list.id === parseInt(activeList)
-                  ? styles.list_links__link_active
+                  ? styles.dropdown_links__link_active
                   : null
               }`}
               id={list.id}
@@ -138,7 +138,7 @@ const ListActions = () => {
               <span>{list.title}</span>
               {list.id === parseInt(activeList) ? (
                 <span
-                  className={`icon ${styles.list_links__icon}`}
+                  className={`icon ${styles.dropdown_links__icon}`}
                   role='img'
                   aria-label='cat emoji'
                 >

@@ -32,7 +32,19 @@
   border-radius: 30px;
 }
 
+.form_group__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .form_cancel {
+  font-weight: 700;
+  text-transform: uppercase;
+
+  width: 100%;
+  padding: 0.5rem 0;
+
   background-color: var(--primary-accent-text-color);
   color: var(--primary-text-color);
 }

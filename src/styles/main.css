@@ -164,8 +164,6 @@ a {
 }
 
 .form_submit {
-  grid-column: -5 / -1;
-
   font-weight: 700;
   text-transform: uppercase;
 

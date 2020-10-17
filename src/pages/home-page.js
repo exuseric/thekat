@@ -76,7 +76,10 @@ const Home = () => {
                 onChange={handleTitleChange}
               />
             </div>
-            <button type='submit' className='form_submit'>
+            <button
+              type='submit'
+              className={`form_submit ${styles.form_submit}`}
+            >
               I'm ready
             </button>
           </form>

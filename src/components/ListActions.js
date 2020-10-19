@@ -10,6 +10,7 @@ import {
 import { ListContext } from '../store';
 
 import styles from '../styles/navigation.module.css';
+import { useHistory } from 'react-router-dom';
 
 const ListActions = () => {
   const {
@@ -23,6 +24,8 @@ const ListActions = () => {
   const [showActions, setShowActions] = useState(true);
   const [showLinks, setShowLinks] = useState(false);
   const [lists, setLists] = useState([]);
+
+  let history = useHistory();
 
   useEffect(() => {
     const data = GET_LISTS();
@@ -48,6 +51,7 @@ const ListActions = () => {
     if (updated.length > 0) {
       const lastList = updated[0];
       CURRENTLY_ACTIVE('list', lastList.id);
+      history.push('/list/');
     }
   };
 

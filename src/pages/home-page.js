@@ -101,13 +101,14 @@ const Home = () => {
                 ))}
               </div>
             </div>
-          ) : null}
-          <div className={styles.illustration}>
-            <img
-              src={catIllustration}
-              alt='illustration of a happy orange tabby cat'
-            />
-          </div>
+          ) : (
+            <div className={styles.illustration}>
+              <img
+                src={catIllustration}
+                alt='illustration of a happy orange tabby cat'
+              />
+            </div>
+          )}
         </div>
       </div>
     </DefaultLayout>

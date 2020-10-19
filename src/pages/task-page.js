@@ -6,7 +6,7 @@ import { ListContext } from '../store';
 import { Subtask } from '../components';
 
 import styles from '../styles/taskpages.module.css';
-import { FiChevronLeft } from 'react-icons/fi';
+import { FiArrowLeft } from 'react-icons/fi';
 
 const ListPage = () => {
   const { activeTask, activeList, subtask, GET_ITEM, GET_TASKS } = useContext(
@@ -39,7 +39,7 @@ const ListPage = () => {
             onClick={handleGoBack}
           >
             <span className='icon'>
-              <FiChevronLeft />
+              <FiArrowLeft />
             </span>
             <span>{listTitle}</span>
           </h2>
@@ -49,7 +49,7 @@ const ListPage = () => {
           {subtasks.map((subtask) => (
             <Subtask
               key={subtask.id}
-              id={subtask.id}
+              selfId={subtask.id}
               title={subtask.title}
               completed={subtask.completed}
             />

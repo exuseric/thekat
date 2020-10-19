@@ -105,11 +105,11 @@
     grid-template-rows: repeat(2, 50%);
   }
 
-  .right_wrapper {
+  .left_wrapper {
     grid-row: 1 /2;
   }
 
-  .left_wrapper {
+  .right_wrapper {
     grid-row: 2 / -1;
   }
 }

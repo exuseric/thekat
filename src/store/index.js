@@ -102,16 +102,25 @@ class ListProvider extends Component {
     if (type === 'list') {
       return this.setState({
         [type]: update.removeItem([...this.state[type]], id),
-        task: update.removeItemByRef(
-          [...this.state.task],
-          this.state.activeList
-        ),
-      });
-    } else {
-      return this.setState({
-        [type]: update.removeItem([...this.state[type]], id),
+        task: update.removeItemByRef([...this.state.task], id),
       });
     }
+    if (type === 'task') {
+      return this.setState({
+        [type]: update.removeItem([...this.state[type]], id),
+        subtask: update.removeItemByRef([...this.state.subtask], id),
+      });
+    }
+    return this.setState({
+      [type]: update.removeItem([...this.state[type]], id),
+    });
+  };
+
+  COMPLETE_ITEM = (type, id, state) => {
+    const completed = update.completeItem([...this.state[type]], id, state);
+    this.setState({
+      [type]: completed,
+    });
   };
 
   GET_TASKS = (type) => {
@@ -140,6 +149,7 @@ class ListProvider extends Component {
           GET_ITEM: this.GET_ITEM,
           RENAME_ITEM: this.RENAME_ITEM,
           DELETE_ITEM: this.DELETE_ITEM,
+          COMPLETE_ITEM: this.COMPLETE_ITEM,
           GET_LISTS: this.GET_LISTS,
           GET_TASKS: this.GET_TASKS,
         }}

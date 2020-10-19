@@ -3,8 +3,6 @@
   height: max-content;
   min-height: 3rem;
 
-  /* padding: 0 1rem; */
-
   border-radius: 5px;
 
   transition: var(--ease-transition);
@@ -30,7 +28,6 @@
   grid-auto-rows: auto;
   grid-auto-flow: dense;
   align-items: center;
-  /* gap: 1rem; */
 
   color: var(--task-text-color);
 }
@@ -79,6 +76,12 @@
   text-decoration: none;
 
   color: inherit;
+}
+
+#completed {
+  text-decoration: line-through;
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-bg);
 }
 
 .title_input {

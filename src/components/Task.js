@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 import { ListContext } from '../store';
 import { FiCheck, FiCircle } from 'react-icons/fi';
 
-const Task = ({ id, title, completed }) => {
-  const { activeList, GET_ITEM, CURRENTLY_ACTIVE } = useContext(ListContext);
+const Task = ({ selfId, title, completed }) => {
+  const { activeList, GET_ITEM, CURRENTLY_ACTIVE, COMPLETE_ITEM } = useContext(
+    ListContext
+  );
   const [list, setList] = useState('');
 
   useEffect(() => {
@@ -14,21 +16,49 @@ const Task = ({ id, title, completed }) => {
     if (data !== undefined) setList(data);
   }, [GET_ITEM, activeList]);
 
-  const handleTaskChange = () => CURRENTLY_ACTIVE('task', id);
+  const handleTaskChange = () => CURRENTLY_ACTIVE('task', selfId);
+
+  const handleComplete = (e) => {
+    const {
+      checked,
+      dataset: { id },
+    } = e.target;
+
+    COMPLETE_ITEM('task', id, checked);
+  };
 
   return (
-    <div className={`${styles.container} ${styles.task_container}`}>
-      <label htmlFor='completed' className={styles.completed}>
-        <span className='icon'>{completed ? <FiCheck /> : <FiCircle />}</span>
-        <input type='checkbox' className={styles.check} />
-      </label>
-      <Link
-        to={`/list/${list.title}/${title}/`}
-        className={styles.link}
-        onClick={handleTaskChange}
+    <div
+      className={`${styles.container} ${styles.task_container}`}
+      id={`${completed ? styles.completed : null}`}
+    >
+      <label
+        htmlFor={`task-${selfId}`}
+        className={styles.completed}
+        tabIndex='1'
       >
-        {title}
-      </Link>
+        <span className='icon'>{completed ? <FiCheck /> : <FiCircle />}</span>
+        <input
+          type='checkbox'
+          id={`task-${selfId}`}
+          className={styles.check}
+          onChange={handleComplete}
+          data-id={selfId}
+        />
+      </label>
+      {completed ? (
+        <Link to='#' className={styles.link}>
+          {title}
+        </Link>
+      ) : (
+        <Link
+          to={`/list/${list.title}/${title}/`}
+          className={styles.link}
+          onClick={handleTaskChange}
+        >
+          {title}
+        </Link>
+      )}
     </div>
   );
 };

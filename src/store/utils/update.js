@@ -27,7 +27,6 @@ const completeItem = (arr, id, state) => {
   const updated = temp.map((item) =>
     item.id === parseInt(id) ? { ...completed } : { ...item }
   );
-
   return updated;
 };
 

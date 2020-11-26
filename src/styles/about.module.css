@@ -1,0 +1,28 @@
+.header {
+  text-align: center;
+
+  padding: 4rem 2rem;
+
+  border-bottom: 2px solid var(--secondary-bg);
+}
+
+.header > p {
+  padding: 2rem 0;
+}
+
+a {
+  padding: 0 0.5rem;
+  color: var(--primary-accent-text-color);
+  text-decoration: none;
+}
+
+.about_content {
+  text-align: left;
+
+  line-height: 1.75;
+  padding: 4rem 2rem;
+}
+
+.about_content > section {
+  padding: 2rem 0;
+}

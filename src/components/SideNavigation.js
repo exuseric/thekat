@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { FiMenu, FiX } from 'react-icons/fi';
-
-import { Logo, ListActions, TaskActions } from '.';
-
+import { Link } from 'react-router-dom';
+import { ListActions, Logo, TaskActions } from '.';
 import styles from '../styles/navigation.module.css';
 
 const SideNavigation = ({ action }) => {
@@ -11,7 +9,11 @@ const SideNavigation = ({ action }) => {
 
   const handleMenu = () => setMenu(!menu);
   return (
-    <nav className={styles.side_nav}>
+    <nav
+      className={styles.side_nav}
+      role='navigation'
+      aria-label='list navigation'
+    >
       <div className={styles.side_nav__top}>
         <Link to='/' className={styles.side_nav__logo}>
           <Logo size='medium' />

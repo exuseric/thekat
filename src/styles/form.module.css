@@ -39,14 +39,14 @@
 }
 
 .form_cancel {
-  font-weight: 700;
-  text-transform: uppercase;
+  font-weight: 300;
+  text-transform: capitalize;
 
   width: 100%;
   padding: 0.5rem 0;
 
-  background-color: var(--primary-accent-text-color);
-  color: var(--primary-text-color);
+  background-color: transparent;
+  color: var(--primary-accent-text-color);
 }
 
 @media screen and (max-width: 500px) {

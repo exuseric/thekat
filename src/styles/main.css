@@ -3,7 +3,7 @@
   --primary: #110f15;
   --secondary: #1b191f;
   --accent: #ff2849;
-  --secondary-accent: #59adff;
+  --secondary-accent: #99a7ff;
   --white: #f5f5f5;
   --grey: #999999;
   --dark-grey: #161419;
@@ -163,7 +163,7 @@ a {
 }
 
 .form_submit {
-  font-weight: 700;
+  font-weight: 400;
   text-transform: uppercase;
 
   width: 100%;
@@ -171,6 +171,8 @@ a {
 
   color: var(--primary-text-color);
   background-color: var(--secondary-accent-bg);
+
+  border-radius: 30px;
 }
 
 /* Input states */
@@ -178,7 +180,8 @@ a {
   border-bottom-color: var(--secondary-accent-bg);
 }
 
-a:hover {
+a:hover,
+a:focus {
   color: var(--secondary-accent-text-color);
 }
 
